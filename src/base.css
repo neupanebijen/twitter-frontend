@@ -1,0 +1,247 @@
+ @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+/*-----------------------------------------------------------
+#DOCUMENT BASE STYLES
+-------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-radius: none; 
+}
+
+/*---------------------------------------------------
+##CSS Variables
+-------------------------------------------------*/
+:root {
+	/*Media Breakpoints*/
+	--wide: 128rem; /*320px diff */
+	--desktop: 96rem; /*240px diff */
+	--tablet: 72rem; /*180px diff */
+	--phone: 54rem; 
+
+	/*Colors*/
+	--color-primary: rgb(29,161,242);
+	--color-primary-shade: rgb(14,80,121);
+	--color-secondary: rgb(0,0,0);
+	--color-secondary-shade: rgb(14,80,121);
+	--color-white: rgb(217,217,217);
+	--color-shade: rgb(21,24,28);
+
+	/*Shadows*/
+	--text-shadow: 1px 2px 4px rgba(5,0,96,0.5);
+	--text-shadow-strong: 1px 1px 3px rgba(5,0,96,0.85);
+
+
+	/*Text sizing*/
+	--base-size: 1.6rem; /* 16px */ 
+	--type-scale: 1.33;
+	--small: var(--base-size);
+	--body: calc(var(--base-size) * var(--type-scale)) ; /*21.33 xp */
+	--h6: calc(var(--body) * var(--type-scale));
+	--h5: calc(var(--h6) * var(--type-scale));
+	--h4: calc(var(--h5) * var(--type-scale));
+	--h3: calc(var(--h4) * var(--type-scale));
+	--h2: calc(var(--h3) * var(--type-scale));
+	--h1: calc(var(--h2) * var(--type-scale));
+
+	/* Fonts */
+	--font-body: "Mulish", sans-serif;
+	--font-heading : 'Lexend Deca', sans-serif;
+}
+
+@media screen and (max-width: var(--tablet)) {
+	:root {
+		--type-scale: 1.25;
+	}
+}
+
+@media screen and (max-width: var(--phone)) {
+	:root {
+		--type-scale: 1.15;
+	}
+}
+
+
+
+/*---------------------------------------------------
+## Layout
+-------------------------------------------------*/
+html{
+	/*1rem = 10px*/
+
+	font-size: 62.5%;
+
+	/*Border Box fix*/
+	box-sizing: border-box;
+
+	/*Somooth scrolling*/
+	scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after{
+	position:relative; 
+	box-sizing: inherit;
+}
+
+body{
+	font-family: var(--font-body);
+	font-size: var(--base-size);
+	margin:0; 
+}
+
+/*---------------------------------------------------
+##CSS Typography
+-------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-family: var(--font-heading); 
+}
+
+h1{
+	font-size: var(--h1);
+	line-height: calc(var(--h1) * var(--type-scale));
+}
+
+h2{
+	font-size: var(--h2);
+	line-height: calc(var(--h2) * var(--type-scale));
+}
+
+h3{
+	font-size: var(--h3);
+	line-height: calc(var(--h3) * var(--type-scale));
+}
+
+h4{
+	font-size: var(--h4);
+	line-height: calc(var(--h4) * var(--type-scale));
+}
+
+h5{
+	font-size: var(--h5);
+	line-height: calc(var(--h5) * var(--type-scale));
+}
+
+h6{
+	font-size: var(--h6);
+	line-height: calc(var(--h6) * var(--type-scale));
+}
+
+p{
+	font-size: calc(var(--body)* var(--type-scale));
+	line-height:calc(var(--body) * var(--type-scale)); 
+}
+
+small{
+	font-size: var(--base-size);
+	line-height:calc(var(--base-size) * var(--type-scale)); 
+}
+
+
+/*---------------------------------------------------
+## Links
+-------------------------------------------------*/
+a{
+	color: var(--color-neon);
+}
+
+a:hover,
+a:active,
+a:focus{
+	color: var(--color-neon-dk);
+}
+
+a:visited{
+	color: var(--color-gray);
+}
+
+a:any-link{
+	text-decoration: none;
+}
+
+/*---------------------------------------------------
+## Elements
+-------------------------------------------------*/
+ol,
+ul{
+	line-height: var(--body); 
+}
+
+/*---------------------------------------------------
+## Accessiblity
+-------------------------------------------------*/
+
+.screen-reader-text{
+	border: 0; 
+	clip: rect(1px,1px,1px,1px); 
+	clip-path: inset(50%); 
+	height: 1px; 
+	margin: -1px; 
+	overflow:hidden; 
+	padding: 0; 
+	position: absolute;
+	width: 1px; 
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus{
+	background-color: #eee; 
+	clip: auto !important; 
+	clip-path: none; 
+	color: #444; 
+	display: block;
+	font-size: 1em;
+	height: auto; 
+	left: 5px; 
+	line-height: normal;
+	padding: 15px 23px 14px; 
+	text-decoration: none; 
+	top: 5px; 
+	width: auto; 
+	z-index: 100000;
+}
